@@ -1,9 +1,16 @@
+import React from "react";
+import TabelaHead from "./components/TabelaHead";
+import TabelaFoot from "./components/TabelaFoot";
+import TabelaBody from "./components/TabelaBody";
+
 function App() {
   return (
-    <div>
-      <h1>Tabela de Livros</h1>
-    </div>
-  );
+    <table className="tabela">
+      <TabelaHead />
+      <TabelaFoot />
+      <TabelaBody />
+    </table>
+  )
 }
 
 export default App;
