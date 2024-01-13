@@ -17,13 +17,20 @@ class App extends Component {
       .finally(function() {
         console.log("Sempre retorna");
       });
-  }
+  };
+  handleRemoverLinha = (id) => {
+    const livros = this.state.livros.filter(l => l.id !== id);
+    this.setState({ livros });
+  };
   render() {
     return (
       <table className="tabela">
         <TabelaHead />
         <TabelaFoot qdeLivros = { this.state.livros.length } />
-        <TabelaBody livros={ this.state.livros } />
+        <TabelaBody 
+          livros={ this.state.livros } 
+          removerLinha={this.handleRemoverLinha}
+        />
       </table>
     );
   }
